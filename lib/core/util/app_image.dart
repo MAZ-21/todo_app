@@ -1,0 +1,29 @@
+abstract class AppImages {
+  static String splashImage = 'asset/images/Logo Onboarding.svg';
+  static String mockup_1 = 'asset/images/X Mockup.svg';
+  static String mockup_2 = 'asset/images/X Mockup_2.svg';
+  static String mockup_3 = 'asset/images/X Mockup_3.svg';
+  static String google = 'asset/images/google.svg';
+  static String facebook = 'asset/images/facebook.svg';
+  static String message = 'asset/images/Message.svg';
+  static String toDoLayout = 'asset/images/todo_layout.svg';
+  static String toDoBody = 'asset/images/todo_body.svg';
+  static String eyeSlash = 'asset/images/eye-slash.svg';
+  static String eye = 'asset/images/eye.svg';
+  static String calendar = 'asset/images/calendar.svg';
+  static String category = 'asset/images/Category.svg';
+  static String inbox = 'asset/images/direct-inbox.svg';
+  static String home = 'asset/images/Home.svg';
+  static String paper = 'asset/images/Paper Plus.svg';
+  static String setting = 'asset/images/Setting.svg';
+  static String plus = 'asset/images/Plus.svg';
+  static String clock = 'asset/images/clock.svg';
+  static String flag = 'asset/images/flag.svg';
+  static String send = 'asset/images/send.svg';
+  static String sun = 'asset/images/sun.svg';
+  static String cloud = 'asset/images/cloud-notif.svg';
+  static String car = 'asset/images/car.svg';
+  static String reserve = 'asset/images/reserve.svg';
+  static String timer = 'asset/images/Timer.svg';
+  static String timePlus = 'asset/images/time_plus.svg';
+}

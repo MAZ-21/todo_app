@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "146298128247",
+    "project_id": "todo-app-83ea9",
+    "storage_bucket": "todo-app-83ea9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146298128247:android:5f36f007c01dd22e518372",
+        "android_client_info": {
+          "package_name": "com.example.food_ecommerce_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146298128247-i2463pj1011qr4k1nfnrc3dsh7upb5o3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.food_ecommerce_app",
+            "certificate_hash": "445a2827221e530cbc48a9aed1e820dd4b8513c2"
+          }
+        },
+        {
+          "client_id": "146298128247-c37ed5ue96qu446u8ug6ub3ii1vvb974.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5MfDuw-pHTQ1_428jyymf1_JOEYjIHoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146298128247-c37ed5ue96qu446u8ug6ub3ii1vvb974.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "146298128247-vpr94uhpn0aig3t3ot8ov4qor0bpdk03.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodEcommerceApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
