@@ -1,16 +1,29 @@
-# food_ecommerce_app
+# Todo App
 
-A new Flutter project.
+A simple and intuitive Todo application built with Flutter to help users organize their daily tasks efficiently. The app provides a clean user interface and local data persistence for a smooth task management experience.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+-  Create new tasks
+-  Edit existing tasks
+-  Delete tasks
+-  View all tasks in an organized list
+-  Select dates using a date picker
+-  Choose task priority and category
+-  Local data storage using SQLite
+-  State management using Cubit (BLoC)
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter
+- Dart
+- flutter_bloc (Cubit)
+- Intl package
+- svg_flutter package
+- smooth_page_indicator package
+- image_cropper package
+- firebase_auth package
+- firebase_core package
+- google_sign_in package
+- flutter_facebook_auth package
+- stylish_bottom_bar package
