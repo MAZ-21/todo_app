@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_ecommerce_app/core/util/size_cofig.dart';
 import 'package:food_ecommerce_app/feature/create_task/presentation/view/widgets/create_task_todo_body.dart';
 import 'package:food_ecommerce_app/feature/home_page_create_theme/view_model/cubit/home_page_cubit.dart';
 
@@ -13,8 +14,8 @@ class CreateTaskTodo extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 148,
-            width: MediaQuery.sizeOf(context).width * 0.83,
+            height: SizeConfig.responsiveHeight(context, 148),
+            width: SizeConfig.responsiveWidth(context, 327),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),
@@ -22,8 +23,8 @@ class CreateTaskTodo extends StatelessWidget {
             child: CreateTaskTodoBody(),
           ),
           Container(
-            height: 36,
-            width: MediaQuery.sizeOf(context).width * 0.83,
+            height: SizeConfig.responsiveHeight(context, 36),
+            width:SizeConfig.responsiveWidth(context, 327),
             decoration: BoxDecoration(
               color: cubit.selectedColor,
               borderRadius: BorderRadius.only(

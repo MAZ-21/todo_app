@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:food_ecommerce_app/core/util/size_cofig.dart';
 import 'package:food_ecommerce_app/feature/create_task/data/model/date_picker_varity_model.dart';
 import 'package:food_ecommerce_app/feature/create_task/presentation/view/widgets/show_bottom_sheet_date_picker.dart';
 import 'package:intl/intl.dart';
@@ -28,7 +29,7 @@ class CreateTaskCubit extends Cubit<CreateTaskState> {
       isScrollControlled: true,
       builder: (context) {
         return SizedBox(
-          height: MediaQuery.sizeOf(context).height * .93,
+          height: SizeConfig.responsiveHeight(context, 759),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 45),
             child: ShowBottomSheetDatePicker(),
