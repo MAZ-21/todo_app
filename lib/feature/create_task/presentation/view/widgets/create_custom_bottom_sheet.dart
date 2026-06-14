@@ -13,7 +13,7 @@ class CreateTaskBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SizeConfig.responsiveHeight(context, 56),
+      height: SizeConfig.responsiveHeight(context, 204),
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: Column(

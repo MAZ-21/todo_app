@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_ecommerce_app/core/util/app_color.dart';
 import 'package:food_ecommerce_app/core/util/app_image.dart';
 import 'package:food_ecommerce_app/core/util/app_styles.dart';
 import 'package:food_ecommerce_app/feature/create_task/data/model/date_picker_varity_model.dart';
+import 'package:food_ecommerce_app/feature/create_task/presentation/view/widgets/create_task_list_tile.dart';
 import 'package:food_ecommerce_app/feature/create_task/presentation/view/widgets/custom_calendar_date_picker.dart';
 import 'package:food_ecommerce_app/feature/create_task/presentation/view/widgets/custom_date_choice.dart';
 import 'package:food_ecommerce_app/feature/create_task/presentation/view/widgets/timer_and_schedual_buttons_date_picker.dart';
+import 'package:food_ecommerce_app/feature/create_task/presentation/view_model/cubit/create_task_cubit.dart';
 import 'package:food_ecommerce_app/feature/splash/presentation/view/widget/account_sign_in_button.dart';
 import 'package:intl/intl.dart';
 
@@ -41,13 +44,16 @@ class ShowBottomSheetDatePicker extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomDateChoice(items: items),
-        CustomCalendarDatePicker(),
-        Spacer(),
-        TimerAndSchedualButtonDatePicker(),
-      ],
+    return BlocProvider(
+      create: (context) => CreateTaskCubit(),
+      child: Column(
+        children: [
+          CustomDateChoice(items: items),
+          CustomCalendarDatePicker(),
+          Spacer(),
+          TimerAndSchedualButtonDatePicker(),
+        ],
+      ),
     );
   }
 }

@@ -14,7 +14,7 @@ class CreateTaskTodo extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: SizeConfig.responsiveHeight(context, 148),
+            height: 148,
             width: SizeConfig.responsiveWidth(context, 327),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -23,7 +23,7 @@ class CreateTaskTodo extends StatelessWidget {
             child: CreateTaskTodoBody(),
           ),
           Container(
-            height: SizeConfig.responsiveHeight(context, 36),
+            height: 36,
             width:SizeConfig.responsiveWidth(context, 327),
             decoration: BoxDecoration(
               color: cubit.selectedColor,
