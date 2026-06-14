@@ -10,15 +10,35 @@ class CustomCalendarDatePicker extends StatelessWidget {
       data: Theme.of(context).copyWith(
         datePickerTheme: DatePickerThemeData(
           backgroundColor: Colors.white,
-          headerBackgroundColor: Colors.teal,
+          headerBackgroundColor: AppColor.teal,
           headerForegroundColor: Colors.white,
-          dayForegroundColor: MaterialStateProperty.all(Colors.black87),
-          todayForegroundColor: MaterialStateProperty.all(Colors.white),
-          todayBackgroundColor: MaterialStateProperty.all(AppColor.teal),
+          todayBorder: BorderSide.none,
+          todayBackgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return AppColor.teal;
+            }
+            return null;
+          }),
+          todayForegroundColor:MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return Colors.white;
+            }
+            return Colors.black;
+          }),
+          dayForegroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return Colors.white;
+            }
+            return Colors.black;
+          }),
+          dayBackgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.selected)) {
+              return AppColor.teal;
+            }
+            return null;
+          }),
           dayShape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           ),
         ),
       ),
