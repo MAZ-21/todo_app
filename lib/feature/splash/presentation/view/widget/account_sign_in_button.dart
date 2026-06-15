@@ -35,7 +35,7 @@ class AccountSignInButton extends StatelessWidget {
           children: [
             SvgPicture.asset(image, height: 26, width: 26),
             SizedBox(width: 13),
-            Text(title, style: Styles.medium18.copyWith(color: textColor)),
+            Text(title, style: Styles.medium18(context).copyWith(color: textColor)),
           ],
         ),
       ),

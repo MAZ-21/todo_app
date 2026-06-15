@@ -26,7 +26,7 @@ class ContinueElevatedButton extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: Styles.medium20.copyWith(
+          style: Styles.medium20(context).copyWith(
             color: Colors.white,
           ),
         ),

@@ -16,14 +16,14 @@ class FirstPageBody extends StatelessWidget {
         SvgPicture.asset(AppImages.splashImage),
         Text(
           'Todo App',
-          style: Styles.helveticaTextStyleBold26.copyWith(
+          style: Styles.helveticaTextStyleBold28(context).copyWith(
             color: Colors.white,
           ),
         ),
         SizedBox(height: 12,),
         Text(
           'The best to do list application for you',
-          style: Styles.regular14.copyWith(
+          style: Styles.regular14(context).copyWith(
             color: Colors.white,
           ),
         ),

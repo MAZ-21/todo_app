@@ -27,7 +27,7 @@ class EmailElevatedButton extends StatelessWidget {
             SizedBox(width: 8,),
             Text(
               'Continue with email',
-              style: Styles.bold18.copyWith(color: Colors.white),
+              style: Styles.bold18(context).copyWith(color: Colors.white),
             ),
           ],
         ),

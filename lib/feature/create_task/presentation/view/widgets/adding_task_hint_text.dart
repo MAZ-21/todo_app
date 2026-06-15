@@ -16,7 +16,7 @@ class AddingTaskHintText extends StatelessWidget {
         SizedBox(width: 12,),
         Text(
           'Tap plus to create a new task',
-          style: Styles.medium16,
+          style: Styles.medium16(context),
         ),
       ],
     );

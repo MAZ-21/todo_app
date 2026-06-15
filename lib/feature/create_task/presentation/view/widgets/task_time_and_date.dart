@@ -14,7 +14,7 @@ class TaskTimeAndDate extends StatelessWidget {
       children: [
         Text(
           'Add your task',
-          style: Styles.regular12.copyWith(color: AppColor.textGrey),
+          style: Styles.regular12(context).copyWith(color: AppColor.textGrey),
         ),
         Spacer(),
         Row(
@@ -22,7 +22,7 @@ class TaskTimeAndDate extends StatelessWidget {
             SizedBox(width: 4,),
             Text(
               currentDate,
-              style: Styles.regular12.copyWith(color: AppColor.textGrey),
+              style: Styles.regular12(context).copyWith(color: AppColor.textGrey),
             ),
           ],
         ),

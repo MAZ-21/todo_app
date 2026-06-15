@@ -24,11 +24,11 @@ class CustomDateChoice extends StatelessWidget {
             children: [
               SvgPicture.asset(items[index].icon),
               SizedBox(width: 12),
-              Text(items[index].text, style: Styles.regular18),
+              Text(items[index].text, style: Styles.regular18(context)),
               Spacer(),
               Text(
                 items[index].date,
-                style: Styles.regular16.copyWith(color: AppColor.textGrey),
+                style: Styles.regular16(context).copyWith(color: AppColor.textGrey),
               ),
             ],
           ),

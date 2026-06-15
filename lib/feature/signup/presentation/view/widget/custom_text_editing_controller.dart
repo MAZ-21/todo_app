@@ -34,7 +34,7 @@ class CustomTextField extends StatelessWidget {
       },
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: Styles.regular16,
+        hintStyle: Styles.regular16(context),
         suffixIcon: icon != null
             ? IconButton(onPressed: onObsecurePressed, icon: icon!)
             : null,

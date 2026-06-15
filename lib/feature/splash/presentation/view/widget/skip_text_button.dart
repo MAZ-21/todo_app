@@ -11,7 +11,7 @@ class SkipTextButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         'Skip',
-        style: Styles.medium16.copyWith(
+        style: Styles.medium16(context).copyWith(
           color: color,
         ),
       ),

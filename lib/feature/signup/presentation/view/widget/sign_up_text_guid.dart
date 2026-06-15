@@ -10,12 +10,12 @@ class SignUpTextGuid extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Text('Create account', style: Styles.semiBold24),
+          Text('Create account', style: Styles.semiBold24(context)),
           const SizedBox(height: 8),
           Text(
             'Create your account and feel the benefits',
             textAlign: TextAlign.center,
-            style: Styles.regular16.copyWith(color: AppColor.textGrey),
+            style: Styles.regular16(context).copyWith(color: AppColor.textGrey),
           ),
         ],
       ),

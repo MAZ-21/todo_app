@@ -35,7 +35,7 @@ class SignUpViewBody extends StatelessWidget {
                 SizedBox(height: 48,),
                 Text(
                   'Email Address',
-                  style: Styles.medium18,
+                  style: Styles.medium18(context),
                 ),
                 SizedBox(height: 12,),
                 CustomTextField(
@@ -56,7 +56,7 @@ class SignUpViewBody extends StatelessWidget {
                 SizedBox(height: 24,),
                 Text(
                   'Password',
-                  style: Styles.medium18,
+                  style: Styles.medium18(context),
                 ),
                 SizedBox(height: 12,),
                 CustomTextField(

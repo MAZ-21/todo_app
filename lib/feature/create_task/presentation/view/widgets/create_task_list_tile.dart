@@ -15,11 +15,11 @@ class CreateTaskListTile extends StatelessWidget {
     return ListTile(
       title: Text(
         'Today', 
-        style: Styles.semiBold24
+        style: Styles.semiBold24(context),
       ),
       subtitle: Text(
         'Best platform for creating to-do lists',
-        style: Styles.regular14.copyWith(color: AppColor.textGrey),
+        style: Styles.regular14(context).copyWith(color: AppColor.textGrey),
       ),
       trailing: SvgPicture.asset(AppImages.setting),
     );

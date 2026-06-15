@@ -14,11 +14,11 @@ class WelcomToApp extends StatelessWidget {
       children: [
         Text(
           'Welcome to',
-          style: Styles.semiBold26,
+          style: Styles.semiBold26(context),
         ),
         Text(
           ' Todoapp',
-          style: Styles.semiBold26.copyWith(
+          style: Styles.semiBold26(context).copyWith(
             color: AppColor.teal
           ),
         ),

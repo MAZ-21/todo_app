@@ -10,11 +10,8 @@ import 'package:food_ecommerce_app/feature/splash/presentation/view/widget/mock_
 import 'package:food_ecommerce_app/feature/splash/presentation/view_model/cubit/splash_cubit.dart';
 
 class PageMockUp extends StatelessWidget {
-  const PageMockUp({
-    super.key, 
-required this.model,
-  });
- final PageMockUpModel model;
+  const PageMockUp({super.key, required this.model});
+  final PageMockUpModel model;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,13 +19,16 @@ required this.model,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          MockUp(image: model.image),
+          AspectRatio(
+            aspectRatio: 188.17 / 379,
+            child: MockUp(image: model.image),
+          ),
           SizedBox(
             width: SizeConfig.responsiveWidth(context, 235),
             child: Text(
               model.firstText,
               textAlign: TextAlign.center,
-              style: Styles.semiBold28,
+              style: Styles.semiBold28(context),
               maxLines: 2,
             ),
           ),
@@ -38,7 +38,7 @@ required this.model,
             child: Text(
               model.secondText,
               textAlign: TextAlign.center,
-              style: Styles.regular16.copyWith(color: AppColor.textGrey),
+              style: Styles.regular16(context).copyWith(color: AppColor.textGrey),
               maxLines: 3,
             ),
           ),
@@ -47,13 +47,16 @@ required this.model,
             padding: EdgeInsets.only(bottom: 57),
             child: ContinueElevatedButton(
               onPressed: () {
-                if(model.controller.page == 2){
+                if (model.controller.page == 2) {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => CreateAccountView()),
+                    MaterialPageRoute(
+                      builder: (context) => CreateAccountView(),
+                    ),
                   );
-                }
-                else{
-                  BlocProvider.of<SplashCubit>(context).nextPage(model.controller);
+                } else {
+                  BlocProvider.of<SplashCubit>(
+                    context,
+                  ).nextPage(model.controller);
                 }
               },
               title: 'Continue',
