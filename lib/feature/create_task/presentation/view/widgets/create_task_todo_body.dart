@@ -12,23 +12,39 @@ class CreateTaskTodoBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => CreateTaskCubit(),
-      child: BlocBuilder<CreateTaskCubit, CreateTaskState>(
+      child: BlocConsumer<CreateTaskCubit, CreateTaskState>(
+        listener: (context, state) {
+          if (state is CreatedTaskSuccess) {
+            Navigator.pop(context);
+          } else if (state is TaskCreatedError) {
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.message)));
+          }
+        },
         builder: (context, state) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            child: GestureDetector(
-              onTap: () {
-                showingBottomSheet(context);
-              },
-              child: Column(
-                children: [
-                  SizedBox(height: 36),
-                  AddingTaskHintText(),
-                  SizedBox(height: 20),
-                  Divider(),
-                  TaskTimeAndDate(),
+            child: Column(
+              children: [
+                if (state is! CreatedTaskSuccess) ...[
+                  GestureDetector(
+                    onTap: () => showingBottomSheet(context),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 36),
+                        AddingTaskHintText(),
+                        SizedBox(height: 20),
+                        Divider(),
+                      ],
+                    ),
+                  ),
                 ],
-              ),
+                 if (state is CreatedTaskSuccess) ...[
+                  TaskTimeAndDate(task: state.task,),
+                  const Divider(),
+                ],
+              ],
             ),
           );
         },
@@ -37,14 +53,15 @@ class CreateTaskTodoBody extends StatelessWidget {
   }
 
   void showingBottomSheet(BuildContext context) {
+    final cubit = context.read<CreateTaskCubit>();
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       builder: (context) {
-        return BlocProvider(
-          create: (context) => CreateTaskCubit(),
+        return BlocProvider.value(
+          value: cubit,
           child: const CreateTaskBottomSheet(),
         );
       },

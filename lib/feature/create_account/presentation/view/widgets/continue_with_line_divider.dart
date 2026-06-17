@@ -20,7 +20,7 @@ class ContinueWithLineDivider extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text(
             'or continue with',
-            style: AppStyles.regular14(context).copyWith(backgroundColor: AppColor.textGrey),
+            style: Styles.regular14(context).copyWith(backgroundColor: AppColor.textGrey),
           ),
         ),
         Expanded(

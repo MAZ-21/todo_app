@@ -2,16 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:food_ecommerce_app/constants.dart';
 import 'package:food_ecommerce_app/core/util/size_cofig.dart';
 
-abstract class AppStyles {
-  AppStyles({required this.context});
-  final BuildContext context;
-
-  static regular14(BuildContext context) {}
-}
-
-class Styles extends AppStyles {
-  Styles(BuildContext context) : super(context: context);
-
+class Styles {
+  // prevent instantiation
+  Styles._();
   static TextStyle helveticaTextStyleBold28(BuildContext context) {
     return TextStyle(
       fontSize: SizeConfig.responsiveText(context, 28),

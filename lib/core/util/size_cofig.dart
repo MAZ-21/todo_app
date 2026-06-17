@@ -12,23 +12,31 @@ class SizeConfig {
     return designHeight * MediaQuery.sizeOf(context).height / figmaHeight;
   }
 
-  // selecting factor
-  // min & max font size
   static double responsiveText(BuildContext context, double designFontSize) {
-    double scaleFactor = getScaleFactor(context);
-    double responsiveFontSize = designFontSize * scaleFactor;
-    double  lowerLimit = designFontSize * 0.8;
-    double  upperLimit = designFontSize * 1.2;
-    return responsiveFontSize.clamp(lowerLimit, upperLimit);
-    // return designFontSize * MediaQuery.sizeOf(context).width / figmaWidth;
-  }
-}
+    final screenWidth = MediaQuery.sizeOf(context).width;
 
-double getScaleFactor(BuildContext context) {
-  double width = MediaQuery.sizeOf(context).width;
-  if (width < 600) {
-    return width / 400;
-  } else {
-    return width / 700;
+    // Normalize scale against Figma base width
+    double scaleFactor = _getScaleFactor(screenWidth);
+    double responsiveFontSize = designFontSize * scaleFactor;
+    double lowerLimit = designFontSize * 0.75;
+    double upperLimit = designFontSize * 1.4;
+
+    return responsiveFontSize.clamp(lowerLimit, upperLimit);
+  }
+
+  static double _getScaleFactor(double width) {
+    if (width < 360) {
+      // Small phones (e.g. iPhone SE)
+      return width / 360;
+    } else if (width < 600) {
+      // Normal phones
+      return width / figmaWidth;
+    } else if (width < 900) {
+      // Large phones / small tablets
+      return width / 600;
+    } else {
+      // Tablets / iPads
+      return width / 800;
+    }
   }
 }
