@@ -26,7 +26,7 @@ class Todo extends StatelessWidget {
           titleSmall: TextStyle(color: Color(0xFF1B1C1F)),
         ),
       ),
-      home: SplashView(),
+      home: HomePageView(),
     );
   }
 }

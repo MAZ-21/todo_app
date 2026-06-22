@@ -26,4 +26,5 @@ abstract class AppImages {
   static String reserve = 'asset/images/reserve.svg';
   static String timer = 'asset/images/Timer.svg';
   static String timePlus = 'asset/images/time_plus.svg';
+  static String flagOutline = 'asset/images/flag_outline.svg';
 }

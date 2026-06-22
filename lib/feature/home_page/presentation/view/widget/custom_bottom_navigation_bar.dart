@@ -2,50 +2,123 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_ecommerce_app/core/util/app_color.dart';
 import 'package:food_ecommerce_app/core/util/app_image.dart';
+import 'package:food_ecommerce_app/feature/create_task/view/create_task_view.dart';
+import 'package:food_ecommerce_app/feature/home_page/presentation/view/home_page_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final Function onTap;
   final int currentIndex;
-  const CustomBottomNavigationBar({
+  final List<Widget> screens;
+  CustomBottomNavigationBar({
     required this.currentIndex,
     required this.onTap,
+    required this.screens,
     super.key,
   });
+  final PersistentTabController _controller =  PersistentTabController(initialIndex: 0);
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      selectedIconTheme: IconThemeData(
-        color: AppColor.teal,
+    return PersistentTabView(
+      context,
+      controller: _controller,
+      screens: screens,
+      items: _navBarsItems(),
+      animationSettings: const NavBarAnimationSettings(
+        navBarItemAnimation: ItemAnimationSettings(
+          // Navigation Bar's items animation properties.
+          duration: Duration(milliseconds: 400),
+          curve: Curves.ease,
+        ),
+        screenTransitionAnimation: ScreenTransitionAnimationSettings(
+          // Screen transition animation on change of selected tab.
+          duration: Duration(milliseconds: 200),
+          screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
+        ),
       ),
-      unselectedItemColor: AppColor.buttonGrey,
-      currentIndex: currentIndex,
-      type: BottomNavigationBarType.fixed,
-      items: [
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(AppImages.home),
-          label: "",
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(AppImages.inbox),
-          label: ""
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(AppImages.calendar),
-          label: ""
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(AppImages.category),
-          label: ""
-        ),
-        BottomNavigationBarItem(
-          icon: SvgPicture.asset(AppImages.paper),
-          label: "",
-        ),
-      ],
-      onTap: (index){
-        onTap(index);
-      }
+      // confineToSafeArea: true,
+      navBarStyle: NavBarStyle.style3,
     );
+  }
+
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(AppImages.home),
+        activeColorPrimary: AppColor.greenTeal,
+        inactiveColorPrimary: AppColor.buttonGrey,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          initialRoute: "/",
+          routes: {
+            "/first": (final context) => const CreateTaskView(),
+            "/second": (final context) => const Center(child: Text('inbox')),
+            "/third": (final context) => const Center(child: Text('calendar')),
+            "/fourth": (final context) => const Center(child: Text('Widget')),
+            "/fifth": (final context) => const Center(child: Text('paper')),
+          },
+        ),
+      ),
+       PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(AppImages.inbox),
+        activeColorPrimary: AppColor.greenTeal,
+        inactiveColorPrimary: AppColor.buttonGrey,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          initialRoute: "/",
+          routes: {
+            "/first": (final context) => const CreateTaskView(),
+            "/second": (final context) => const Center(child: Text('inbox')),
+            "/third": (final context) => const Center(child: Text('calendar')),
+            "/fourth": (final context) => const Center(child: Text('Widget')),
+            "/fifth": (final context) => const Center(child: Text('paper')),
+          },
+        ),
+      ),
+       PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(AppImages.calendar),
+        activeColorPrimary: AppColor.greenTeal,
+        inactiveColorPrimary: AppColor.buttonGrey,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          initialRoute: "/",
+          routes: {
+            "/first": (final context) => const CreateTaskView(),
+            "/second": (final context) => const Center(child: Text('inbox')),
+            "/third": (final context) => const Center(child: Text('calendar')),
+            "/fourth": (final context) => const Center(child: Text('Widget')),
+            "/fifth": (final context) => const Center(child: Text('paper')),
+          },
+        ),
+      ),
+       PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(AppImages.category),
+        activeColorPrimary: AppColor.greenTeal,
+        inactiveColorPrimary: AppColor.buttonGrey,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          initialRoute: "/",
+          routes: {
+            "/first": (final context) => const CreateTaskView(),
+            "/second": (final context) => const Center(child: Text('inbox')),
+            "/third": (final context) => const Center(child: Text('calendar')),
+            "/fourth": (final context) => const Center(child: Text('Widget')),
+            "/fifth": (final context) => const Center(child: Text('paper')),
+          },
+        ),
+      ),
+       PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(AppImages.paper),
+        activeColorPrimary: AppColor.greenTeal,
+        inactiveColorPrimary: AppColor.buttonGrey,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          initialRoute: "/",
+          routes: {
+            "/first": (final context) => const CreateTaskView(),
+            "/second": (final context) => const Center(child: Text('inbox')),
+            "/third": (final context) => const Center(child: Text('calendar')),
+            "/fourth": (final context) => const Center(child: Text('Widget')),
+            "/fifth": (final context) => const Center(child: Text('paper')),
+          },
+        ),
+      ),
+    ];
   }
 }

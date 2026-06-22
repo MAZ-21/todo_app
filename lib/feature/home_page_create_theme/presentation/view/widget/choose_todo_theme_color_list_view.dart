@@ -13,7 +13,6 @@ class ChooseThemePage extends StatelessWidget {
     return BlocBuilder<ChooseThemeHomePageCubit, int>(
       builder: (context, selectedIndex) {
         final cubit = context.read<ChooseThemeHomePageCubit>();
-        
         return Column(
           children: List.generate(
             cubit.themeColors.length,
