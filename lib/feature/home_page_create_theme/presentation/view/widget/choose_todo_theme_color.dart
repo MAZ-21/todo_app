@@ -3,10 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:food_ecommerce_app/core/util/app_image.dart';
 
 class ChooseTodoThemeColor extends StatelessWidget {
-  const ChooseTodoThemeColor({
-    super.key,
-    required this.color,
-  });
+  const ChooseTodoThemeColor({super.key, required this.color});
   final Color color;
   @override
   Widget build(BuildContext context) {

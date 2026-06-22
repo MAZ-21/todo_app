@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_ecommerce_app/feature/create_task/view/create_task_view.dart';
+import 'package:food_ecommerce_app/feature/create_task/presentation/create_task_view.dart';
 import 'package:food_ecommerce_app/feature/home_page/presentation/view/widget/custom_bottom_navigation_bar.dart';
 import 'package:food_ecommerce_app/feature/home_page/view_model/home_page_cubit.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
@@ -23,8 +23,7 @@ class HomePageView extends StatelessWidget {
       child: BlocBuilder<HomePageCubit, int>(
         builder: (context, currentIndex) {
           return Scaffold(
-            body: IndexedStack(index: currentIndex, children: screens),
-            bottomNavigationBar: CustomBottomNavigationBar(
+            body: CustomBottomNavigationBar(
               currentIndex: currentIndex,
               screens: screens,
               onTap: (index) {

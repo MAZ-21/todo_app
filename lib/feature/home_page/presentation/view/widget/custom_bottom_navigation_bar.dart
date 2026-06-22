@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_ecommerce_app/core/util/app_color.dart';
 import 'package:food_ecommerce_app/core/util/app_image.dart';
-import 'package:food_ecommerce_app/feature/create_task/view/create_task_view.dart';
+import 'package:food_ecommerce_app/core/util/size_cofig.dart';
+import 'package:food_ecommerce_app/feature/create_task/presentation/create_task_view.dart';
 import 'package:food_ecommerce_app/feature/home_page/presentation/view/home_page_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -25,15 +26,17 @@ class CustomBottomNavigationBar extends StatelessWidget {
       controller: _controller,
       screens: screens,
       items: _navBarsItems(),
+      navBarHeight: SizeConfig.responsiveHeight(context, 54),
       animationSettings: const NavBarAnimationSettings(
         navBarItemAnimation: ItemAnimationSettings(
           // Navigation Bar's items animation properties.
-          duration: Duration(milliseconds: 400),
+          duration: Duration(milliseconds: 600),
           curve: Curves.ease,
+          
         ),
         screenTransitionAnimation: ScreenTransitionAnimationSettings(
           // Screen transition animation on change of selected tab.
-          duration: Duration(milliseconds: 200),
+          duration: Duration(milliseconds: 600),
           screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
         ),
       ),
@@ -45,7 +48,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AppImages.home),
+        icon: SvgPicture.asset(AppImages.home, height: 24,),
         activeColorPrimary: AppColor.greenTeal,
         inactiveColorPrimary: AppColor.buttonGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -60,7 +63,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ),
        PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AppImages.inbox),
+        icon: SvgPicture.asset(AppImages.inbox, height: 24,),
         activeColorPrimary: AppColor.greenTeal,
         inactiveColorPrimary: AppColor.buttonGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -75,7 +78,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ),
        PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AppImages.calendar),
+        icon: SvgPicture.asset(AppImages.calendar, height: 24,),
         activeColorPrimary: AppColor.greenTeal,
         inactiveColorPrimary: AppColor.buttonGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -90,7 +93,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ),
        PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AppImages.category),
+        icon: SvgPicture.asset(AppImages.category, height: 24,),
         activeColorPrimary: AppColor.greenTeal,
         inactiveColorPrimary: AppColor.buttonGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
@@ -105,7 +108,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ),
        PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(AppImages.paper),
+        icon: SvgPicture.asset(AppImages.paper, height: 24,),
         activeColorPrimary: AppColor.greenTeal,
         inactiveColorPrimary: AppColor.buttonGrey,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(

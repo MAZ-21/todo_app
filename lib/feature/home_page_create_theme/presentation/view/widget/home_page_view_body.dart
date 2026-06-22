@@ -21,7 +21,7 @@ class ChooseThemeHomePageViewBody extends StatelessWidget {
               Text('Create to do list', style: Styles.semiBold24(context)),
               SizedBox(height: 8),
               Text(
-                'Choose your to do list color theme:  ',
+                'Choose your to do list color theme: ',
                 style: Styles.regular14(context),
               ),
               SizedBox(height: 32),
